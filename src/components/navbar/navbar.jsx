@@ -4,11 +4,11 @@ import navstyle from './navbar.module.css'
 const Navbar = () => {
     return (
     <nav className={navstyle.nav}>
-        <div className={navstyle.item}><a>Profile</a></div>
-        <div className={`${navstyle.item} ${navstyle.active}`}><a>Messages</a></div>
-        <div className={navstyle.item}><a>News</a></div>
-        <div className={navstyle.item}><a>Music</a></div>
-        <div className={navstyle.item}><a>Settings</a></div>
+        <div className={navstyle.item}><a href="/profile">Profile</a></div>
+        <div className={`${navstyle.item} ${navstyle.active}`}><a href="/dialogs">Messages</a></div>
+        <div className={navstyle.item}><a href="">News</a></div>
+        <div className={navstyle.item}><a href="">Music</a></div>
+        <div className={navstyle.item}><a href="">Settings</a></div>
       </nav>
     )
 }
