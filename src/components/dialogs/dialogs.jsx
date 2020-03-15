@@ -31,11 +31,11 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 {messagesElements}
                 <div>            
-              <textarea ref={message}></textarea>
-            </div>
-            <div>            
-              <button onClick={sendMsg}>Add post</button>
-            </div>
+                    <textarea ref={message}></textarea>
+                </div>
+                <div>            
+                    <button onClick={sendMsg}>Add post</button>
+                </div>
             </div>
 
         </div>

@@ -1,4 +1,4 @@
-import {rerenderTree} from '../render';
+let rerenderTree;
 
 let state = {
     dialogsPage: {
@@ -22,18 +22,31 @@ let state = {
         posts: [
             { id: 1, message: "How are you doing", likesCount: 12 },
             { id: 2, message: "I am perfectly well", likesCount: 5 }
-          ]
+          ],
+        newPostText: 'Hello there'
     }
 }
 
-export let addPost = (message) => {
+window.state = state;
+
+export let addPost = () => {
     let msg =  { 
         id: 3, 
-        message: message, 
+        message: state.profilePage.newPostText, 
         likesCount: 0
     }
     state.profilePage.posts.push(msg);
+    state.profilePage.newPostText = '';
     rerenderTree(state);
 }
 
-export default state;
+export let updateNewPostWindow = (text) => {
+    state.profilePage.newPostText = text;
+    rerenderTree(state);
+}
+
+export const observer = (obser) => {
+    rerenderTree = obser;
+}
+
+export default state; 
