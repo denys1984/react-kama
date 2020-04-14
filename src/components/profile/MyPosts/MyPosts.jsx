@@ -1,20 +1,19 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './post/Post';
-import {addPostCreateAction, updateNewPostCreateAction} from './../../../redux/profile-reduser'
 
 
 const MyPosts = (props) => {
-
+  
   let makePost = React.createRef();
   // --------------------------------------
   let createPost = () => {
-    props.dispatch(addPostCreateAction());
+    props.addNewPost();
   };
 
   let postWindowChange = () => {
     let postText = makePost.current.value;
-    props.dispatch(updateNewPostCreateAction(postText));
+    props.postWindowChange(postText);
   };
   // ---------------------------------
 

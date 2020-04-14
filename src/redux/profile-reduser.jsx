@@ -1,9 +1,15 @@
-import { stat } from "fs";
-
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_WINDOW = 'UPDATE-NEW-POST-WINDOW';
 
-const profileReducer = (state, action) => {
+let initial = {
+    posts: [
+        { id: 1, message: "How are you doing", likesCount: 12 },
+        { id: 2, message: "I am perfectly well", likesCount: 5 }
+      ],
+    newPostText: 'Hello there'
+};
+
+const profileReducer = (state = initial, action) => {
     switch (action.type) {
         case ADD_POST:
             let msg =  { 
