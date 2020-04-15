@@ -3,20 +3,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {Provider} from "react-redux";
+import {Provider} from 'react-redux';
 
-let rerenderTree = (state) => {
+let rerenderTree = () => {
     ReactDOM.render(
       <Provider store={store} >
-            <App state={state} 
-                  dispatch={store.dispatch.bind(store)} 
-                  store={store} />
+            <App  />
       </Provider>, 
       document.getElementById('root')
     ); 
 }
 
-rerenderTree(store.getState());
+rerenderTree();
 
 store.subscribe(()=>{
       let state = store.getState();
